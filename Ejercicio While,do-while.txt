@@ -1,0 +1,101 @@
+Calculadora Menu de Opciones- Marlon Aguilar
+
+const opcion = prompt(
+  "Seleccione una opción:\n" +
+    "1. Calculadora\n" +
+    "2. Cálculo de promedio de notas\n" +
+    "3. Cálculo de área de un rectángulo\n" +
+    "4. Suma de dos números\n" +
+    "5. Retorno de nombre del día según número de día"
+);
+
+switch (opcion) {
+  case "1":
+    // Calculadora
+    const num1 = parseFloat(prompt("Ingrese el primer número:"));
+    const num2 = parseFloat(prompt("Ingrese el segundo número:"));
+    const operacion = prompt("Ingrese la operación (+, -, *, /):");
+
+    let resultado = 0;
+    switch (operacion) {
+      case "+":
+        resultado = num1 + num2;
+        break;
+      case "-":
+        resultado = num1 - num2;
+        break;
+      case "*":
+        resultado = num1 * num2;
+        break;
+      case "/":
+        resultado = num1 / num2;
+        break;
+      default:
+        alert("Operación no válida.");
+        break;
+    }
+
+    alert(`El resultado es: ${resultado}`);
+    break;
+
+  case "2":
+    let sumaNotas = 0;
+    for (let i = 1; i <= 4; i++) {
+      sumaNotas += parseFloat(prompt(`Ingrese la nota ${i}:`));
+    }
+    const promedio = sumaNotas / 4;
+    alert(`El promedio de notas es: ${promedio}`);
+    break;
+
+  case "3":
+    const base = parseFloat(prompt("Ingrese la base del rectángulo:"));
+    const altura = parseFloat(prompt("Ingrese la altura del rectángulo:"));
+    const area = base * altura;
+    alert(`El área del rectángulo es: ${area}`);
+    break;
+
+  case "4":
+    const numSum1 = parseFloat(prompt("Ingrese el primer número:"));
+    const numSum2 = parseFloat(prompt("Ingrese el segundo número:"));
+    const suma = numSum1 + numSum2;
+    alert(`La suma es: ${suma}`);
+    break;
+
+  case "5":
+    const numeroDia = parseInt(prompt("Ingrese el número del día (1-7):"));
+
+    let nombre = "";
+    switch (numeroDia) {
+      case 1:
+        nombre = "Domingo";
+        break;
+      case 2:
+        nombre = "Lunes";
+        break;
+      case 3:
+        nombre = "Martes";
+        break;
+      case 4:
+        nombre = "Miércoles";
+        break;
+      case 5:
+        nombre = "Jueves";
+        break;
+      case 6:
+        nombre = "Viernes";
+        break;
+      case 7:
+        nombre = "Sábado";
+        break;
+      default:
+        alert("Número de día no válido.");
+        break;
+    }
+
+    alert(`El día es: ${nombre}`);
+    break;
+
+  default:
+    alert("Opción no válida.");
+    break;
+}
